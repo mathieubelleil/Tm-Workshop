@@ -1,1 +1,14 @@
-<p>emargement works!</p>
+	
+<h1>Possibilité d'émargement</h1>
+<div class="list">
+    <div>
+        le code est : {{module.code}}
+    </div>
+    <div>
+        <span> le qr code est :</span>
+        <qrcode [qrdata]="myAngularxQrCode" [width]="256" [errorCorrectionLevel]="'M'"></qrcode>
+    </div>
+    <div>
+        envoi de mail
+    </div>
+</div>
