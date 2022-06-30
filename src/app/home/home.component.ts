@@ -8,6 +8,7 @@ import { UserService } from '@app/_services';
 export class HomeComponent {
     loading = false;
     users: User[];
+    msg: string;
 
     constructor(private userService: UserService) { }
 

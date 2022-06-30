@@ -2,6 +2,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import {MatButtonModule,MatSnackBarModule} from '@angular/material';
 
 // used to create fake backend
 import { fakeBackendProvider } from './_helpers';
@@ -17,6 +18,7 @@ import { LoginComponent } from './login';
     imports: [
         BrowserModule,
         ReactiveFormsModule,
+        MatButtonModule,MatSnackBarModule,
         HttpClientModule,
         appRoutingModule
     ],

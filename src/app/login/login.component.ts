@@ -2,33 +2,49 @@
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
-
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Inject } from '@angular/core';
 import { AuthenticationService } from '@app/_services';
 
 @Component({ templateUrl: 'login.component.html' })
 export class LoginComponent implements OnInit {
     loginForm: FormGroup;
     loading = false;
+    isClicked = false;
     submitted = false;
+    submitClick = false;
     returnUrl: string;
     error = '';
+    msg: string;
+    username: string;
+    mail: string;
+
+
 
     constructor(
         private formBuilder: FormBuilder,
         private route: ActivatedRoute,
         private router: Router,
-        private authenticationService: AuthenticationService
-    ) { 
+        private authenticationService: AuthenticationService,
+    ) {
         // redirect to home if already logged in
-        if (this.authenticationService.currentUserValue) { 
+        if (this.authenticationService.currentUserValue) {
             this.router.navigate(['/']);
         }
     }
 
+    submit() {
+        this.submitClick = true;
+        console.log("username :" + this.username);
+        console.log("mail :" + this.mail);
+    }
+
+    OnClick() { this.isClicked = true; }
+
     ngOnInit() {
         this.loginForm = this.formBuilder.group({
             username: ['', Validators.required],
-            password: ['', Validators.required]
+            password: ['', Validators.required],
         });
 
         // get return url from route parameters or default to '/'
@@ -37,6 +53,7 @@ export class LoginComponent implements OnInit {
 
     // convenience getter for easy access to form fields
     get f() { return this.loginForm.controls; }
+
 
     onSubmit() {
         this.submitted = true;
@@ -58,4 +75,6 @@ export class LoginComponent implements OnInit {
                     this.loading = false;
                 });
     }
+
+
 }

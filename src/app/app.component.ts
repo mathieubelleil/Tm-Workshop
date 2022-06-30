@@ -7,6 +7,8 @@ import { User } from './_models';
 @Component({ selector: 'app', templateUrl: 'app.component.html' })
 export class AppComponent {
     currentUser: User;
+    msg: string;
+
 
     constructor(
         private router: Router,
@@ -14,6 +16,8 @@ export class AppComponent {
     ) {
         this.authenticationService.currentUser.subscribe(x => this.currentUser = x);
     }
+
+   
 
     logout() {
         this.authenticationService.logout();
