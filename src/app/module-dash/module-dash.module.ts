@@ -5,6 +5,7 @@ import { ModuleDashComponent } from './module-dash.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { TableModule } from 'primeng/table'
+import {TabViewModule} from 'primeng/tabview';
 
 const routes:Routes = [
   {path: '',
@@ -17,6 +18,7 @@ const routes:Routes = [
     CommonModule,
     RouterModule.forChild(routes),
     TableModule,
+    TabViewModule,
     NgModule
   ]
 })
