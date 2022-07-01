@@ -31,6 +31,10 @@ Exécutez 'ng e2e' pour exécuter les tests de bout en bout via une plateforme d
 Pour obtenir plus d'aide sur le CLI d'Angular, utilisez 'ng help' ou consultez la page [Angular CLI Overview and Command Reference](https://angular.io/cli).
 
 
+
+
 Bonne utilisation ! 
+
 Cordialement, 
+
 l'équipe CAT MM.
