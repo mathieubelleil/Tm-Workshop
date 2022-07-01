@@ -9,10 +9,12 @@ import { fakeBackendProvider } from './_helpers';
 
 import { AppComponent } from './app.component';
 import { appRoutingModule } from './app.routing';
+import { QRCodeModule } from 'angularx-qrcode';
 
 import { BasicAuthInterceptor, ErrorInterceptor } from './_helpers';
 import { HomeComponent } from './home';
-import { LoginComponent } from './login';
+import { LoginComponent } from './login';;
+import { EmargementComponent } from './emargement/emargement.component'
 
 @NgModule({
     imports: [
@@ -20,12 +22,15 @@ import { LoginComponent } from './login';
         ReactiveFormsModule,
         MatButtonModule,MatSnackBarModule,
         HttpClientModule,
+        QRCodeModule,
         appRoutingModule
     ],
     declarations: [
         AppComponent,
         HomeComponent,
         LoginComponent
+,
+        EmargementComponent
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
