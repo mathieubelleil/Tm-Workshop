@@ -1,40 +1,26 @@
-# Eq6Workshop
 
-## Pour utiliser notre solution
+# Eq6 Workshop
 
-Veuillez télécharger notre code en faisant un git clone <lien du git> dans votre éditeur de code favori.
-Ensuite avant d'éxécuter, réalisez la commande 'npm i' afin d'installer les modules utiles pour le projet.
+Guide installation du projet :
 
-## Pour éxécuter notre solution
+Ouvrez un terminal de commande.
 
-Exécutez 'ng serve' pour éxécuter le serveur de développement. Naviguez jusqu'à 'http://localhost:4200/'. L'application sera automatiquement rechargée si vous modifiez l'un des fichiers sources.
+`mkdir eq6workshop`
 
-## Echafaudage de code
+puis
 
-Exécutez 'ng generate component component-name' pour générer un nouveau composant. Vous pouvez également utiliser 'ng generate directive|pipe|service|class|guard|interface|enum|module'.
+`cd eq6workshop`
 
+Une fois dans le dossier il vous faut installer les dépendances avec NPM.
 
-## Pour construire le projet
+`npm i`
 
-Lancez 'ng build' pour construire le projet. Les modules de construction seront stockés dans le répertoire 'dist/'.
+Lorsque tout est installé il ne reste plus qu'a démarrer l'app.
 
-## Exécution des tests unitaires
+`ng serve`
 
-Lancez 'ng test' pour exécuter les tests unitaires via [Karma] (https://karma-runner.github.io).
+L'application est désormais accessible à l'adresse `localhost:4200` ou en cliquand [ici](http://localhost:4200/login)
 
-## Exécuter les tests de bout en bout
-
-Exécutez 'ng e2e' pour exécuter les tests de bout en bout via une plateforme de votre choix. Pour utiliser cette commande, vous devez d'abord ajouter un paquet qui implémente des capacités de tests de bout en bout.
-
-## Aide supplémentaire
-
-Pour obtenir plus d'aide sur le CLI d'Angular, utilisez 'ng help' ou consultez la page [Angular CLI Overview and Command Reference](https://angular.io/cli).
-
-
-
-
-Bonne utilisation ! 
-
-Cordialement, 
-
-l'équipe CAT MM.
+<p align="center" style="margin-top: 10px;">
+<img src="https://campusacademy.fr/assets/img/logos/logo_ca_white.png"  width="20%" height="20%">
+</p>
