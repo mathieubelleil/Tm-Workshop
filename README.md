@@ -1,5 +1,10 @@
 # Eq6Workshop
 
+## Pour utiliser notre solution
+
+Veuillez télécharger notre code en faisant un git clone <lien du git> dans votre éditeur de code favori.
+Ensuite avant d'éxécuter, réalisez la commande 'npm i' afin d'installer les modules utiles pour le projet.
+
 ## Pour éxécuter notre solution
 
 Exécutez 'ng serve' pour éxécuter le serveur de développement. Naviguez jusqu'à 'http://localhost:4200/'. L'application sera automatiquement rechargée si vous modifiez l'un des fichiers sources.
