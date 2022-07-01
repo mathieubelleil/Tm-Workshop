@@ -8,3 +8,112 @@
         </ul>
     </div>
 </div>
+<br>
+
+
+<div class="card mt-4">
+    <h4 class="card-header">Séance en cours</h4>
+    <div class="card-body">
+        <div class="session-code">
+            <span>
+                Liens de la séances : <button type="button" class="btn btn-secondary">QR code</button>
+            </span>
+            <span>
+                Code séance :
+                <a>
+                    {{ codeSeance }}
+                </a>
+            </span>
+        </div>
+        <br>
+        <div class="session-code">
+            <span>
+               Signature par terminal : <button type="button" class="btn btn-secondary">Acceder au terminal</button>
+            </span>
+            <span>
+
+                Envoyer par mail :
+                <button type="button" class="btn btn-secondary">ENVOYER</button>
+            </span> 
+        </div>
+        <br> 
+
+        <table>
+            <tr>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>École</th>
+                <th>Signature</th>
+                <th>Email</th>
+            </tr>
+            <tr *ngFor="let user of listUser">
+                <td>{{user.name}}</td>
+                <td>{{user.firstname}}</td>
+                <td>{{user.school}}</td>
+                
+                <td class="td-picture" *ngIf="user.sign == null" >
+                    <button type="button" class="btn btn-outline-success" >SIGNÉ</button>
+                    <br>
+                    <button type="button" class="btn btn-outline-danger">ABSCENCE</button>
+                    <span class="date">Le {{user.date}}</span>
+                </td>
+                <td class="td-picture" *ngIf="user.sign == 0" >
+                    <button type="button" class="btn btn-outline-danger">ABSCENT</button>
+                    <span class="date">Le {{user.date}}</span>
+                </td>
+                <td class="td-picture" *ngIf="user.sign != null && user.sign != 0" >
+                    <img class="fit-picture" src={{user.sign}} />
+                    <span class="date">Le {{user.date}}</span>
+                </td>
+                <td>
+                    <input type="checkbox" id="horns" name="horns">
+                </td>
+            </tr>
+        </table>
+            
+
+    </div>
+</div>
+<br>
+
+
+
+<style>
+
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+    .fit-picture {
+        width: 50px;
+        height: 50px;
+    }
+    .td-picture {
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .session-code {
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .date{
+        font-size: 12px;
+    }
+
+</style>
