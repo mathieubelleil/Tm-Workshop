@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
+import {CardModule} from 'primeng/card';
 import { TableModule } from 'primeng/table'
 import {TabViewModule} from 'primeng/tabview';
 import { HttpClientModule } from '@angular/common/http';
@@ -16,6 +17,8 @@ import {InputTextModule} from 'primeng/inputtext';
 import {CalendarModule} from 'primeng/calendar';
 import {CheckboxModule} from 'primeng/checkbox';
 import {ButtonModule} from 'primeng/button';
+import {ToolbarModule} from 'primeng/toolbar';
+import * as $ from "jquery";
 
 @NgModule({
   declarations: [
@@ -36,6 +39,8 @@ import {ButtonModule} from 'primeng/button';
     CalendarModule,
     CheckboxModule,
     ButtonModule,
+    ToolbarModule,
+    CardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
