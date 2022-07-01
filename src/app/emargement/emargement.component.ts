@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Module } from './module';
+import { STUDENTS } from './mock-students';
 
 
 @Component({
@@ -8,6 +9,7 @@ import { Module } from './module';
   styleUrls: ['./emargement.component.less']
 })
 export class EmargementComponent implements OnInit {
+  students = STUDENTS
   public myAngularxQrCode: string = null;
   module: Module = {
     code : Math.floor((Math.random() * 90000) + 10000).toString()
