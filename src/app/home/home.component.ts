@@ -1,4 +1,4 @@
-﻿import { Component } from '@angular/core';
+﻿﻿import { Component } from '@angular/core';
 import { first } from 'rxjs/operators';
 
 import { User } from '@app/_models';
@@ -8,9 +8,6 @@ import { UserService } from '@app/_services';
 export class HomeComponent {
     loading = false;
     users: User[];
-<<<<<<< HEAD
-    msg: string;
-=======
     listUser = [
         {
             name:"Arthur",
@@ -43,7 +40,6 @@ export class HomeComponent {
     ];
     codeSeance = 18970;
 
->>>>>>> dev_arthur
 
     constructor(private userService: UserService) { }
 
