@@ -10,6 +10,7 @@
 </div>
 <br>
 
+
 <div class="card mt-4">
     <h4 class="card-header">Séance en cours</h4>
     <div class="card-body">
@@ -24,40 +25,61 @@
                 </a>
             </span>
         </div>
-       
-        
+        <br>
+        <div class="session-code">
+            <span>
+               Signature par terminal : <button type="button" class="btn btn-secondary">Acceder au terminal</button>
+            </span>
+            <span>
+
+                Envoyer par mail :
+                <button type="button" class="btn btn-secondary">ENVOYER</button>
+            </span> 
+        </div>
+        <br> 
+
         <table>
             <tr>
                 <th>Nom</th>
                 <th>Prenom</th>
                 <th>École</th>
                 <th>Signature</th>
-        
+                <th>Email</th>
             </tr>
             <tr *ngFor="let user of listUser">
                 <td>{{user.name}}</td>
                 <td>{{user.firstname}}</td>
                 <td>{{user.school}}</td>
-        
+                
                 <td class="td-picture" *ngIf="user.sign == null" >
+                    <button type="button" class="btn btn-outline-success" >SIGNÉ</button>
+                    <br>
                     <button type="button" class="btn btn-outline-danger">ABSCENCE</button>
                     <span class="date">Le {{user.date}}</span>
                 </td>
-                <td class="td-picture" *ngIf="user.sign != null" >
+                <td class="td-picture" *ngIf="user.sign == 0" >
+                    <button type="button" class="btn btn-outline-danger">ABSCENT</button>
+                    <span class="date">Le {{user.date}}</span>
+                </td>
+                <td class="td-picture" *ngIf="user.sign != null && user.sign != 0" >
                     <img class="fit-picture" src={{user.sign}} />
                     <span class="date">Le {{user.date}}</span>
                 </td>
+                <td>
+                    <input type="checkbox" id="horns" name="horns">
+                </td>
             </tr>
         </table>
+            
+
     </div>
 </div>
 <br>
 
 
 
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
 <style>
+
     table {
         font-family: arial, sans-serif;
         border-collapse: collapse;

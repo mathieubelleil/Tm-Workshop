@@ -1,10 +1,13 @@
-﻿import { Component } from '@angular/core';
+﻿import { Component, Input } from '@angular/core';
 import { first } from 'rxjs/operators';
-
+import {NgbActiveModal, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import { User } from '@app/_models';
 import { UserService } from '@app/_services';
 
+
+
 @Component({ templateUrl: 'home.component.html' })
+
 export class HomeComponent {
     loading = false;
     users: User[];
@@ -35,13 +38,14 @@ export class HomeComponent {
             firstname:"Arthur",
             school:"Arthur",
             date:"28/07/2022",
-            sign: null,
+            sign: 0,
         },
     ];
     codeSeance = 18970;
 
 
-    constructor(private userService: UserService) { }
+    constructor(private userService: UserService, private modalService: NgbModal) { }
+    
 
     ngOnInit() {
         this.loading = true;
@@ -50,4 +54,20 @@ export class HomeComponent {
             this.users = users;
         });
     }
+    open() {
+        const modalRef = this.modalService.open(NgbdModalContent);
+        modalRef.componentInstance.name = 'World';
+        }
 }
+export class NgbdModalContent {
+    @Input() name;
+
+    constructor(public activeModal: NgbActiveModal) {}
+}
+
+
+
+
+
+
+
